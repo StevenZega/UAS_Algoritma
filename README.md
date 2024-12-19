@@ -1,1 +1,1 @@
-# UAS_Algoritma dan Pemrograman Dasar
+# UAS Algoritma dan Pemrograman Dasar
