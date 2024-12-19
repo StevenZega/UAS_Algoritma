@@ -1,16 +1,10 @@
-# Kadane's Algorithm: Mencari Jumlah Subarray Maksimum
-def kadane_algorithm(self, arr):
-    # Inisialisasi nilai saat ini dan nilai maksimum global
-    max_current = max_global = arr[0]
-    
-    # Iterasi mulai dari elemen kedua hingga akhir array
-    for i in range(1, len(arr)):
-        # Menentukan nilai maksimum saat ini: antara elemen arr[i] atau penambahan elemen tersebut ke subarray sebelumnya
-        max_current = max(arr[i], max_current + arr[i])
-        
-        # Memperbarui nilai maksimum global jika nilai saat ini lebih besar
-        if max_current > max_global:
-            max_global = max_current
-    
-    # Mengembalikan nilai subarray maksimum yang ditemukan
-    return max_global
+class Kadane:
+    def run(self, arr):
+        # Inisialisasi nilai maksimum global dan lokal dengan elemen pertama array
+        max_sum = current_sum = arr[0]
+        for num in arr[1:]:  # Iterasi dimulai dari elemen kedua
+            # Perbarui jumlah maksimum lokal (apakah menambahkan elemen baru atau mulai dari elemen baru)
+            current_sum = max(num, current_sum + num)
+            # Perbarui jumlah maksimum global jika diperlukan
+            max_sum = max(max_sum, current_sum)
+        return max_sum  # Kembalikan jumlah maksimum
